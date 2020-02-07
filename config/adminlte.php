@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Placar</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
@@ -173,11 +173,11 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
+        // [
+        //     'text' => 'search',
+        //     'search' => true,
+        //     'topnav' => true,
+        // ],
 
         ['header' => 'account_settings'],
         [
@@ -186,6 +186,11 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Partidas',
+            'url'  => 'partidas',
+            'icon' => 'fas fa-fw fa-chess-pawn',
+        ],
+         [
             'text' => 'Ranking',
             'url'  => 'ranking',
             'icon' => 'fas fa-fw fa-trophy',

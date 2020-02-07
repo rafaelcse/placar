@@ -19,19 +19,36 @@ class Jogadores extends Model
 	];
 
 
-		public function partidasVencidas()
+	public function partidasVencidas1()
 	{
 		return $this->hasMany(\App\Model\Partidas::class,  'id','vencedor1_id');
 	}
 
+	public function partidasPerdidas1() {
+		return $this->hasMany(\App\Model\Partidas::class,'id','perdedor1_id');
+	}
+
+	public function partidasVencidas2()
+	{
+		return $this->hasMany(\App\Model\Partidas::class,  'id','vencedor2_id');
+	}
+
+	public function partidasPerdidas2() {
+		return $this->hasMany(\App\Model\Partidas::class,'id','perdedor2_id');
+	}
 
 
-public function partidasPerdidas() {
-    return $this->hasMany(\App\Model\Partidas::class,'id','perdedor_id');
-}
+	// public function allVencidas() {
+	// 	return $this->partidasVencidas1->merge($this->partidasVencidas2);
+	// }
 
-public function allUserRelations() {
-    return $this->partidasVencidas->merge($this->partidasPerdidas);
-}
+	// public function allPerdidas() {
+	// 	return $this->partidasPerdidas1->merge($this->partidasPerdidas2);
+	// }
+
+
+	// public function allPartidas() {
+	// 	return $this->allVencidas->merge($this->allPerdidas);
+	// }
 
 }

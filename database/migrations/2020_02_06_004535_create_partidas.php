@@ -16,9 +16,11 @@ class CreatePartidas extends Migration
         Schema::create('partidas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('vencedor1_id');
-            $table->integer('vencedor2_id');
+            $table->integer('vencedor2_id')->nullable();
             $table->integer('perdedor1_id');
-            $table->integer('perdedor2_id');
+            $table->integer('perdedor2_id')->nullable();
+            $table->double('valor_aposta', 8, 2);
+            $table->date('data_partida')
             $table->timestamps();
         });
     }

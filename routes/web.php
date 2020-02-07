@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Auth::routes();
@@ -21,6 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/jogadores', 'JogadoresController')->middleware('auth');
 Route::resource('partidas', 'PartidasController')->middleware('auth');
+Route::get('/ranking', 'JogadoresController@ranking')->name('home')->middleware('auth');;
+Route::get('/jogadores/delete/{id}', 'JogadoresController@destroy')->name('jogadores.delete')->middleware('auth');;
+Route::get('/jogadores/historico/{id}', 'JogadoresController@historico')->name('jogadores.historico')->middleware('auth');
+Route::get('/partidas/delete/{id}', 'PartidasController@destroy')->name('partidas.delete')->middleware('auth');
+
 
 // Auth::routes();
 
